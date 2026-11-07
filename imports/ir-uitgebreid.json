@@ -1,0 +1,306 @@
+{
+  "version": 1,
+  "subject": "Spectroscopie",
+  "name": "IR – Uitgebreide lijst",
+  "description": "Volledige IR-lijst (golfgetallen in cm⁻¹ → groep), uit ir_flashcards.csv.",
+  "color": "#f59e0b",
+  "cards": [
+    {
+      "type": "term",
+      "front": "3200–3600 cm⁻¹, breed en rond",
+      "back": "O–H (alcohol, fenol)",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "2500–3300 cm⁻¹, zeer breed, over de C–H-pieken heen",
+      "back": "O–H van een carbonzuur",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "3300–3500 cm⁻¹, 2 smallere pieken",
+      "back": "N–H van NH₂ (primair amine/amide)",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "3300–3500 cm⁻¹, 1 smallere piek",
+      "back": "N–H van NH (secundair amine/amide)",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~3300 cm⁻¹, scherp en smal",
+      "back": "≡C–H (terminaal alkyn)",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "3000–3100 cm⁻¹ (net links van 3000)",
+      "back": "sp² C–H (alkeen of aromaat)",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "2850–3000 cm⁻¹ (net rechts van 3000)",
+      "back": "sp³ C–H (alkyl)",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "2820 + 2720 cm⁻¹, twee zwakke banden",
+      "back": "aldehyde C–H",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "2210–2260 cm⁻¹",
+      "back": "C≡N (nitril)",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "2100–2260 cm⁻¹, zwak",
+      "back": "C≡C (alkyn)",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~1800 cm⁻¹",
+      "back": "C=O van een zuurchloride",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~1820 + ~1760 cm⁻¹ (twee C=O-banden)",
+      "back": "anhydride",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~1740 cm⁻¹",
+      "back": "C=O van een ester",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~1725 cm⁻¹",
+      "back": "C=O van een aldehyde",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~1715 cm⁻¹",
+      "back": "C=O van een keton",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~1710 cm⁻¹ (met zeer brede O–H)",
+      "back": "C=O van een carbonzuur",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~1680–1690 cm⁻¹",
+      "back": "geconjugeerde C=O (aan ring of C=C), ongeveer 30 lager",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~1660 cm⁻¹",
+      "back": "C=O van een amide",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "1620–1680 cm⁻¹, middel",
+      "back": "C=C (alkeen)",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~1600 + ~1500 cm⁻¹",
+      "back": "aromatische C=C (benzeenring)",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "1700–2000 cm⁻¹, reeks zwakke bandjes",
+      "back": "boventonen van een benzeenring",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~1250 + ~1050 cm⁻¹, twee sterke banden",
+      "back": "C–O van een ester",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "1050–1150 cm⁻¹, sterk (geen C=O, geen O–H)",
+      "back": "C–O van een ether",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~1050 cm⁻¹, sterk (met brede O–H)",
+      "back": "C–O van een alcohol",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~1250 cm⁻¹ (met C=O ~1710 en zeer brede O–H)",
+      "back": "C–O van een carbonzuur",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~1550 + ~1350 cm⁻¹, twee sterke banden",
+      "back": "NO₂ (nitrogroep)",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~1380 cm⁻¹, gesplitst in twee",
+      "back": "isopropyl- of tert-butylgroep",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~750 + ~700 cm⁻¹, sterk",
+      "back": "monogesubstitueerde benzeen",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "800–850 cm⁻¹, sterk",
+      "back": "para-gesubstitueerde benzeen",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~750 cm⁻¹, één sterke band",
+      "back": "ortho-gesubstitueerde benzeen",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~990 + ~910 cm⁻¹",
+      "back": "terminaal alkeen (RCH=CH₂)",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "term",
+      "front": "~970 cm⁻¹",
+      "back": "trans-alkeen",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    },
+    {
+      "type": "concept",
+      "front": "Volgorde C=O hoog → laag",
+      "back": "zuurchloride 1800 > anhydride 1820/1760 > ester 1740 > aldehyde 1725 > keton 1715 > zuur 1710 > amide 1660",
+      "tags": [
+        "ir",
+        "uitgebreid"
+      ]
+    }
+  ]
+}
