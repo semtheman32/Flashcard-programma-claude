@@ -1,0 +1,36 @@
+{
+  "name": "studieplatform",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Persoonlijk flashcard-studieplatform (Quizlet/Anki-geïnspireerd), lokaal met SQLite.",
+  "scripts": {
+    "postinstall": "prisma generate",
+    "setup": "prisma migrate deploy",
+    "dev": "prisma migrate deploy && next dev",
+    "build": "prisma migrate deploy && next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "agent": "tsx agent/cli.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "lucide-react": "^1.70.0",
+    "next": "^15.5.29",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "postcss": "^8.5.32",
+    "prisma": "^6.19.3",
+    "tailwindcss": "^4.3.5",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.0"
+  }
+}
