@@ -44,6 +44,8 @@ Cloze example: `"front": "Aromatische protonen liggen rond {{7-8}} ppm"`. The hi
 - Superscripts/subscripts are normalised: `cm⁻¹` = `cm-1`, `H₂O` = `H2O`; `–` and `—` = `-`.
 - Separate acceptable alternatives with `;` or `|`: `"back": "keton; ketone"`.
 - Answers that are mostly digits must match exactly (no typo tolerance).
+- `≡` can be typed as `#`.
+- Key terms are enough: text in (parentheses) and after the first comma is optional. If the rest contains real words ("C=O van een carbonzuur"), typing those words is enough ("carbonzuur"); otherwise the most specific formula ("NH₂") or any word from the parentheses ("amine") is enough. Formulas and numbers must still be exact. See `keyTermsMatch` in `src/lib/answer.ts`.
 
 ## Import behaviour
 

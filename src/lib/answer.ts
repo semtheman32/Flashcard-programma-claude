@@ -4,13 +4,15 @@
  * - superscripts/subscripts normalised (cm⁻¹ == cm-1, H₂O == H2O)
  * - small typos accepted (Damerau–Levenshtein, threshold depends on length)
  * - alternatives: an answer "a; b" or "a | b" accepts either part
+ * - key-term matching ("partial"): you don't have to type the whole answer, see keyTermsMatch()
+ * - "≡" can be typed as "#" (C#C == C≡C)
  */
 
-export type AnswerVerdict = "correct" | "typo" | "incorrect";
+export type AnswerVerdict = "correct" | "typo" | "partial" | "incorrect";
 
 export interface AnswerCheck {
   verdict: AnswerVerdict;
-  /** true for "correct" and "typo" */
+  /** true for "correct", "typo" and "partial" */
   accepted: boolean;
   /** the alternative that matched best */
   expected: string;
@@ -25,6 +27,7 @@ const SUPER: Record<string, string> = {
 
 export function normalizeAnswer(input: string): string {
   let s = input.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻₀-₉₊₋−–—]/g, (c) => SUPER[c] ?? c);
+  s = s.replace(/≡/g, "#");
   s = s.normalize("NFKD").replace(/[̀-ͯ]/g, "");
   s = s.toLowerCase();
   s = s.replace(/<[^>]+>/g, " "); // strip simple html
@@ -92,5 +95,72 @@ export function checkAnswer(given: string, answer: string, opts: { allowTypos?: 
       best = { ...best, distance: dist };
     }
   }
+  if (best.accepted) return best;
+  for (const alt of splitAlternatives(answer)) {
+    if (keyTermsMatch(given, alt, allowTypos)) {
+      return { verdict: "partial", accepted: true, expected: alt, distance: best.distance };
+    }
+  }
   return best;
+}
+
+const STOPWORDS = new Set(["van", "een", "de", "het", "of", "en", "aan", "met", "in", "op", "the", "a", "an", "and", "or"]);
+
+/** Words of an answer: no punctuation, no hyphens inside words ("O–H" → "oh"), no filler words. */
+export function answerTokens(text: string): string[] {
+  return normalizeAnswer(text)
+    .replace(/[()[\],;/|>]/g, " ")
+    .split(/\s+/)
+    .map((t) => t.replace(/-/g, "").replace(/^[.:]+|[.:]+$/g, ""))
+    .filter((t) => t && !STOPWORDS.has(t));
+}
+
+/** A "keyword" is a real word (letters only, 4+ chars). Everything else (C=O, sp3, NH2, 1715) is a formula/number. */
+const isKeyword = (t: string) => /^[a-z]{4,}$/.test(t);
+
+function tokenMatches(expected: string, typed: string[], allowTypos: boolean): boolean {
+  return typed.some((t) => {
+    if (t === expected) return true;
+    if (!allowTypos || !isKeyword(expected)) return false;
+    if (editDistance(t, expected) <= typoAllowance(expected)) return true;
+    // same word stem: "aromaat" ~ "aromatische", "geconjugeerd" ~ "geconjugeerde"
+    let p = 0;
+    while (p < t.length && p < expected.length && t[p] === expected[p]) p++;
+    return p >= 5 && p >= 0.7 * Math.min(t.length, expected.length);
+  });
+}
+
+/**
+ * Lenient check: is the essence of the answer there?
+ * The answer is split into a main part and optional parts: text in (parentheses) and text after the
+ * first comma are optional. Then:
+ *  - if the main part has keywords (e.g. "C=O van een carbonzuur" → "carbonzuur"), all of them must be typed
+ *  - otherwise (e.g. "C≡C (alkyn)", "N–H van NH₂ (primair amine)") the most specific formula of the
+ *    main part ("c#c", "nh2") must be typed, OR any keyword from the optional part ("alkyn", "amine")
+ * Formulas and numbers must match exactly (after normalisation); keywords may contain small typos.
+ */
+export function keyTermsMatch(given: string, answer: string, allowTypos = true): boolean {
+  const typed = answerTokens(given);
+  if (!typed.length) return false;
+  let main = answer;
+  const optionalParts: string[] = [];
+  main = main.replace(/\(([^)]*)\)/g, (_, inner: string) => {
+    optionalParts.push(inner);
+    return " ";
+  });
+  const comma = main.indexOf(",");
+  if (comma > 0) {
+    optionalParts.push(main.slice(comma + 1));
+    main = main.slice(0, comma);
+  }
+  const mainTokens = answerTokens(main);
+  const mainKeywords = mainTokens.filter(isKeyword);
+  const optionalKeywords = optionalParts.flatMap(answerTokens).filter(isKeyword);
+
+  if (mainKeywords.length) return mainKeywords.every((k) => tokenMatches(k, typed, allowTypos));
+  if (optionalKeywords.some((k) => tokenMatches(k, typed, allowTypos))) return true;
+  const formulas = mainTokens.filter((t) => !isKeyword(t));
+  if (!formulas.length) return false;
+  const specific = formulas.reduce((a, b) => (b.length >= a.length ? b : a));
+  return typed.includes(specific);
 }

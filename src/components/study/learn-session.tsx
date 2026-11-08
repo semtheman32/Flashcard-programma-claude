@@ -306,6 +306,11 @@ export function LearnSession({
             {feedback.kind === "written" && feedback.check.verdict === "correct" && (
               <p className="flex items-center gap-2 font-medium text-emerald-700 dark:text-emerald-400"><Check size={18} /> Goed!</p>
             )}
+            {feedback.kind === "written" && feedback.check.verdict === "partial" && (
+              <p className="font-medium text-emerald-700 dark:text-emerald-400">
+                Goed! Volledig antwoord: <span className="card-text">{feedback.check.expected}</span>
+              </p>
+            )}
             {feedback.kind === "written" && feedback.check.verdict === "typo" && (
               <p className="font-medium text-emerald-700 dark:text-emerald-400">
                 Bijna goed, let op de spelling: <span className="card-text">{feedback.check.expected}</span>

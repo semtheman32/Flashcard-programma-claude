@@ -59,7 +59,7 @@ export function SettingsClient({ settings }: { settings: Settings }) {
           </div>
           <label className="flex items-center gap-2 text-sm">
             <input type="checkbox" checked={s.allowTypos} onChange={(e) => setS({ ...s, allowTypos: e.target.checked })} />
-            Kleine typfouten goedrekenen in Leren
+            Soepel nakijken in Leren (kleine typfouten en alleen de kernwoorden zijn genoeg)
           </label>
           <div className="flex items-center gap-3">
             <Button disabled={pending}>Opslaan</Button>
