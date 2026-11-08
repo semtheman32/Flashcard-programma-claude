@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "subject": "Voorbeeldvak",
+  "name": "Formaatvoorbeeld",
+  "description": "Laat elk kaarttype zien. Alleen een voorbeeld van het formaat, niet importeren als studiestof.",
+  "color": "#0ea5e9",
+  "icon": "flask-conical",
+  "cards": [
+    { "type": "term", "front": "Begrip", "back": "Definitie van het begrip", "tags": ["voorbeeld"] },
+    { "type": "qa", "front": "Een vraag?", "back": "Het antwoord; een alternatief antwoord", "hints": ["Een hint"] },
+    { "type": "concept", "front": "Concept", "back": "Uitleg in een paar zinnen", "description": "Extra achtergrond die na het omdraaien zichtbaar is" },
+    { "type": "formula", "front": "E = h·ν", "back": "Energie van een foton uit de frequentie" },
+    { "type": "cloze", "front": "Een zin met een {{ontbrekend}} woord", "back": "Optionele toelichting" },
+    { "type": "image", "front": "Wat zie je op de afbeelding?", "back": "Het juiste antwoord", "imageUrl": "https://example.com/plaatje.png", "difficulty": 4 }
+  ]
+}

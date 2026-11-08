@@ -1,0 +1,119 @@
+// Database schema voor het studieplatform.
+// SQLite, lokaal bestand (zie DATABASE_URL in .env).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Subject {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String?
+  color       String   @default("#6366f1")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  decks       Deck[]
+}
+
+model Deck {
+  id            String         @id @default(cuid())
+  name          String
+  description   String?
+  color         String         @default("#6366f1")
+  icon          String         @default("layers")
+  subjectId     String?
+  subject       Subject?       @relation(fields: [subjectId], references: [id], onDelete: SetNull)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  lastStudiedAt DateTime?
+  cards         Card[]
+  sessions      StudySession[]
+
+  @@index([subjectId])
+}
+
+model Card {
+  id          String   @id @default(cuid())
+  deckId      String
+  deck        Deck     @relation(fields: [deckId], references: [id], onDelete: Cascade)
+  /// term | qa | concept | formula | image | cloze
+  type        String   @default("term")
+  front       String
+  back        String
+  description String?
+  imageUrl    String?
+  /// JSON array of strings
+  hints       String   @default("[]")
+  /// JSON array of strings (lowercase)
+  tags        String   @default("[]")
+  /// 1 (easy) .. 5 (hard), user-set
+  difficulty  Int      @default(3)
+  position    Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Spaced repetition (SM-2) state
+  /// new | learning | review | mastered (derived from SM-2 state, see src/lib/srs)
+  status         String    @default("new")
+  easeFactor     Float     @default(2.5)
+  interval       Int       @default(0)
+  repetitions    Int       @default(0)
+  lapses         Int       @default(0)
+  dueAt          DateTime?
+  lastReviewedAt DateTime?
+
+  reviews Review[]
+
+  @@index([deckId])
+  @@index([dueAt])
+  @@index([status])
+}
+
+model StudySession {
+  id           String    @id @default(cuid())
+  deckId       String?
+  deck         Deck?     @relation(fields: [deckId], references: [id], onDelete: SetNull)
+  /// flashcards | learn | review
+  mode         String
+  startedAt    DateTime  @default(now())
+  endedAt      DateTime?
+  durationSec  Int       @default(0)
+  cardsStudied Int       @default(0)
+  correct      Int       @default(0)
+  incorrect    Int       @default(0)
+  reviews      Review[]
+
+  @@index([startedAt])
+}
+
+model Review {
+  id             String        @id @default(cuid())
+  cardId         String
+  card           Card          @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  sessionId      String?
+  session        StudySession? @relation(fields: [sessionId], references: [id], onDelete: SetNull)
+  /// flashcards | learn | review
+  mode           String
+  /// again | hard | good | easy (review mode); known | unknown (flashcards); correct | incorrect (learn)
+  rating         String
+  correct        Boolean
+  reviewedAt     DateTime      @default(now())
+  intervalBefore Int?
+  intervalAfter  Int?
+  easeAfter      Float?
+  /// true when this was the card's first review-mode rating (used for the daily new-card limit)
+  wasNew         Boolean       @default(false)
+
+  @@index([cardId])
+  @@index([reviewedAt])
+}
+
+model Setting {
+  key   String @id
+  value String
+}

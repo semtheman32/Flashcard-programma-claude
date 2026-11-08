@@ -1,0 +1,293 @@
+{
+  "version": 1,
+  "subject": "Spectroscopie",
+  "name": "IR – Niveau 1 + 2",
+  "description": "Alle IR-kaarten (28): niveau 1 en 2 samen. Strategie (50 min), drie blikken per IR-spectrum: 1) 1650–1820: sterke C=O? Zo ja, waar precies? 2) Boven 3200: breed (O–H), heel breed tot 2500 (zuur), of 1–2 smallere pieken (N–H)? 3) Rond 3000: pieken links (sp²) en/of rechts (sp³)? Daarmee heb je in een halve minuut de functionele groep; de rest bevestig je met NMR.",
+  "color": "#10b981",
+  "cards": [
+    {
+      "type": "term",
+      "front": "3600–3200 cm⁻¹, breed",
+      "back": "O–H (alcohol)",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "3300–2500 cm⁻¹, zeer breed (over C–H heen)",
+      "back": "O–H (carbonzuur)",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "3500–3300 cm⁻¹, 1 of 2 pieken",
+      "back": "N–H",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3,
+      "description": "NH₂ = 2 pieken, NH = 1"
+    },
+    {
+      "type": "term",
+      "front": "~3300 cm⁻¹, scherp",
+      "back": "≡C–H (terminaal alkyn)",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "3100–3000 cm⁻¹ (links van 3000)",
+      "back": "=C–H (sp², alkeen/aromaat)",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "3000–2850 cm⁻¹ (rechts van 3000)",
+      "back": "C–H (sp³)",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "2820 + 2720 cm⁻¹ (twee banden)",
+      "back": "aldehyde C–H",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "2260–2210 cm⁻¹",
+      "back": "C≡N",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "2260–2100 cm⁻¹, zwak",
+      "back": "C≡C",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "~1810 + ~1760 cm⁻¹ (twee C=O)",
+      "back": "anhydride",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "~1800 cm⁻¹",
+      "back": "zuurchloride",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "~1740 cm⁻¹",
+      "back": "ester",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "~1725 cm⁻¹",
+      "back": "aldehyde",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "~1715 cm⁻¹",
+      "back": "keton",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "~1710 cm⁻¹",
+      "back": "carbonzuur",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "~1690–1680 cm⁻¹",
+      "back": "geconjugeerde C=O",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3,
+      "description": "C=O aan een ring of C=C"
+    },
+    {
+      "type": "term",
+      "front": "~1660 cm⁻¹",
+      "back": "amide",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "1680–1620 cm⁻¹",
+      "back": "C=C (alkeen)",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "~1600 + ~1500 cm⁻¹",
+      "back": "aromatische C=C",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3
+    },
+    {
+      "type": "term",
+      "front": "1300–1000 cm⁻¹, sterk",
+      "back": "C–O",
+      "tags": [
+        "ir",
+        "niveau-1"
+      ],
+      "difficulty": 3,
+      "description": "ester: 1250 + 1050; alcohol/ether: ~1050–1100; zuur: ~1250"
+    },
+    {
+      "type": "term",
+      "front": "2000–1700 cm⁻¹, reeks zwakke bandjes",
+      "back": "aromatische boventonen (benzeenring)",
+      "tags": [
+        "ir",
+        "niveau-2"
+      ],
+      "difficulty": 4
+    },
+    {
+      "type": "term",
+      "front": "~1380 cm⁻¹ (gesplitst)",
+      "back": "CH₃-buig",
+      "tags": [
+        "ir",
+        "niveau-2"
+      ],
+      "difficulty": 4,
+      "description": "Gesplitst: isopropyl of tert-butyl"
+    },
+    {
+      "type": "term",
+      "front": "~720 cm⁻¹",
+      "back": "lange CH₂-keten (meer dan 4)",
+      "tags": [
+        "ir",
+        "niveau-2"
+      ],
+      "difficulty": 4
+    },
+    {
+      "type": "term",
+      "front": "1550 + 1350 cm⁻¹",
+      "back": "NO₂",
+      "tags": [
+        "ir",
+        "niveau-2"
+      ],
+      "difficulty": 4
+    },
+    {
+      "type": "term",
+      "front": "990 + 910 cm⁻¹",
+      "back": "terminaal alkeen (RCH=CH₂)",
+      "tags": [
+        "ir",
+        "niveau-2"
+      ],
+      "difficulty": 4
+    },
+    {
+      "type": "term",
+      "front": "~970 cm⁻¹",
+      "back": "trans-alkeen",
+      "tags": [
+        "ir",
+        "niveau-2"
+      ],
+      "difficulty": 4
+    },
+    {
+      "type": "term",
+      "front": "~750 + ~700 cm⁻¹",
+      "back": "monogesubstitueerde benzeen",
+      "tags": [
+        "ir",
+        "niveau-2"
+      ],
+      "difficulty": 4
+    },
+    {
+      "type": "term",
+      "front": "860–800 cm⁻¹",
+      "back": "para-gesubstitueerde benzeen",
+      "tags": [
+        "ir",
+        "niveau-2"
+      ],
+      "difficulty": 4
+    }
+  ]
+}
